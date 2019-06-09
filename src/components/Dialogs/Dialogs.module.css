@@ -1,0 +1,18 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+.dialogs_items{
+    background-color: aquamarine;
+    padding: 10px;
+}
+.dialog{
+
+}
+.messages{
+    background-color: gold;
+    padding: 10px;
+}
+.message{
+
+}
