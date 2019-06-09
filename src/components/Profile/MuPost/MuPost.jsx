@@ -3,19 +3,26 @@ import classes from './MuPost.module.css'
 import Post from "./post/Post";
 
 
-function MuPost() {
-    return (
-        <div>
-            my post
 
+function MuPost() {
+    let posts = [
+        {id: 1, name: 'post',LikeCounts: 11},
+        {id: 2, name: 'post1',LikeCounts: 15}
+    ]
+
+    return (
+        <div className={classes.padding}>
+            <h3>my post</h3>
             <div>
-                new post
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button>Add</button>
+                </div>
             </div>
             <div className={classes.posts}>
-                <Post message={'post'}/>
-                <Post message={'post1'}/>
-                <Post message={'post2'}/>
-                <Post message={'post3'}/>
+                {posts.map(item => <Post message={item.name} like={item.LikeCounts}/>)}
             </div>
         </div>
     )

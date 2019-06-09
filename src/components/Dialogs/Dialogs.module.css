@@ -5,14 +5,21 @@
 .dialogs_items{
     background-color: aquamarine;
     padding: 10px;
+
+}
+.acrive{
+    color: gold;
 }
 .dialog{
 
+}
+.dialog a{
+    text-decoration: none;
 }
 .messages{
     background-color: gold;
     padding: 10px;
 }
-.message{
-
+.messages .message{
+    color: white;
 }

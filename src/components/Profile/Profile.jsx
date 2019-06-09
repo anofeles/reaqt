@@ -1,17 +1,13 @@
 import React from 'react'
 import classes from './Profile.module.css'
 import MuPost from "./MuPost/MuPost";
+import ProfileInfo from "./MuPost/ProfileInfo/ProfileInfo";
 
 
 function Profile() {
     return (
         <div className={classes.content}>
-            <div>
-                <img src={'https://imgcomfort.com/Userfiles/Upload/images/illustration-geiranger.jpg'}/>
-            </div>
-            <div>
-                ava = description
-            </div>
+            <ProfileInfo />
             <MuPost/>
         </div>
     )
