@@ -3,9 +3,9 @@
     grid-template-columns: 2fr 10fr;
 }
 .dialogs_items{
-    background-color: aquamarine;
+    background-color: #bcb7ff;
     padding: 10px;
-
+    border-right: 1px solid #000 ;
 }
 .acrive{
     color: gold;
@@ -17,9 +17,12 @@
     text-decoration: none;
 }
 .messages{
-    background-color: gold;
+    background-color: #bcb7ff;
     padding: 10px;
 }
 .messages .message{
     color: white;
+}
+.messages .post{
+    margin-top: 20px;
 }
