@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = () => {
+    console.log('start')
+}
 
 let State = {
     profilePage: {
@@ -24,8 +26,9 @@ let State = {
     ]
 };
 
+window.state = State;
 
-export let addPost = () => {
+export const addPost = () => {
 
     let newPost = {
         id: 5,
@@ -34,16 +37,16 @@ export let addPost = () => {
     };
     State.profilePage.post.push(newPost);
     State.profilePage.newPostText = '';
-    rerenderEntireTree(State);
+    rerenderEntireTree();
 };
 
-export let onPostCheange = (postMessages) => {
+export const onPostCheange = (postMessages) => {
 
     State.profilePage.newPostText = postMessages;
-    rerenderEntireTree(State);
+    rerenderEntireTree();
 };
 
-export let addMedages = () => {
+export const addMedages = () => {
 
     let newPost = {
         id: 6,
@@ -51,7 +54,11 @@ export let addMedages = () => {
     };
     State.userMesages.push(newPost);
     State.profilePage.newPostText = '';
-    rerenderEntireTree(State);
+    rerenderEntireTree();
 };
+
+export const subscrioe = (observer) => {
+    rerenderEntireTree = observer; // pattertn observer (nabludatel)
+}
 
 export default State;
