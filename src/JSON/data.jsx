@@ -5,7 +5,8 @@ let State = {
         post: [
             {id: 1, name: "post123", LikeCounts: 11},
             {id: 2, name: "post1", LikeCounts: 15}
-        ]
+        ],
+        newPostText: "Add Text"
     },
     userDualog: [
         {id: 1, name: "kakha"},
@@ -24,16 +25,33 @@ let State = {
 };
 
 
-export let addPost = (postMessages) => {
+export let addPost = () => {
 
     let newPost = {
         id: 5,
-        name: postMessages,
+        name: State.profilePage.newPostText,
         LikeCounts: 0
     };
     State.profilePage.post.push(newPost);
+    State.profilePage.newPostText = '';
     rerenderEntireTree(State);
 };
 
+export let onPostCheange = (postMessages) => {
+
+    State.profilePage.newPostText = postMessages;
+    rerenderEntireTree(State);
+};
+
+export let addMedages = () => {
+
+    let newPost = {
+        id: 6,
+        name: State.profilePage.newPostText
+    };
+    State.userMesages.push(newPost);
+    State.profilePage.newPostText = '';
+    rerenderEntireTree(State);
+};
 
 export default State;

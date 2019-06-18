@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {addPost} from './JSON/data';
+import {addPost,addMedages,onPostCheange} from './JSON/data';
 
 export let rerenderEntireTree = (State) =>{
-    ReactDOM.render(<App State={State} addPost={addPost} />, document.getElementById('root'));
+    ReactDOM.render(<App State={State} onPostCheange={onPostCheange} addPost={addPost} addMedages={addMedages} />, document.getElementById('root'));
 };
 

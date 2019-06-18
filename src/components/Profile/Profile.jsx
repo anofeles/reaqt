@@ -11,7 +11,7 @@ function Profile(props) {
     return (
         <div className={classes.content}>
             <ProfileInfo />
-            <MuPost state={props.state} addPost={props.addPost}/>
+            <MuPost onPostCheange={props.onPostCheange} newPostText={props.newPostText} profilePage={props.profilePage} addPost={props.addPost}/>
         </div>
     )
 }

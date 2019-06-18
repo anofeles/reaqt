@@ -13,7 +13,12 @@ import Header from "./components/Header/Header";
 
 function App(props) {
 
-    let SomeComponent = () => <Dialogs userDualog={props.State.userDualog} userMesages={props.State.userMesages}/>;
+    let SomeComponent = () => <Dialogs
+        onPostCheange={props.onPostCheange}
+        newPostText={props.State.profilePage.newPostText}
+        addMedages={props.addMedages}
+        userDualog={props.State.userDualog}
+        userMesages={props.State.userMesages}/>;
 
     return (
         <BrowserRouter>
@@ -21,7 +26,11 @@ function App(props) {
                 <Header/>
                 <Navbar/>
                 <div className={'app-wrapper-content'}>
-                    <Route path={'/Profile'} render={()=> <Profile state={props.State.profilePage} addPost={props.addPost}/>}/>
+                    <Route path={'/Profile'} render={()=> <Profile
+                        onPostCheange={props.onPostCheange}
+                        newPostText={props.State.profilePage.newPostText}
+                        profilePage={props.State.profilePage}
+                        addPost={props.addPost}/>}/>
                     <Route path={'/Messages'} component={SomeComponent}/>
                     <Route path={'/News'} component={()=><News/>}/>
                     <Route path={'/Music'} component={Music}/>

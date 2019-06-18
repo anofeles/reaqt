@@ -4,25 +4,28 @@ import Post from "./post/Post";
 
 
 function MuPost(props) {
-    let postsElements = props.state.post.map(item => <Post key={item.id} message={item.name} like={item.LikeCounts}/>);
+    let postsElements = props.profilePage.post.map(item => <Post key={item.id} message={item.name} like={item.LikeCounts}/>);
     let newPostElemnt = React.createRef();
     let addPost = () => {
         // addPosts(newPostElemnt.current.value);
         // let text = newPostElemnt.current.value;
         // alert(text)
-        if(newPostElemnt.current.value != ""){
-            props.addPost(newPostElemnt.current.value);
+        if(props.profilePage.newPostText != ""){
+            props.addPost();
         }
-        newPostElemnt.current.value = "";
     };
 
+    let onPostCheange = () => {
+      let text = newPostElemnt.current.value;
+       props.onPostCheange(text)
+    };
 
     return (
         <div className={classes.padding}>
             <h3>my post</h3>
             <div>
                 <div>
-                    <textarea ref={newPostElemnt}></textarea>
+                    <textarea onChange={onPostCheange} ref={newPostElemnt} value={props.profilePage.newPostText}/>
                 </div>
                 <div>
                     <button onClick={addPost}>Add</button>
