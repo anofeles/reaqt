@@ -10,7 +10,6 @@ import Settings from "./components/Settings/Settings";
 import Header from "./components/Header/Header";
 
 
-
 function App(props) {
 
     let SomeComponent = () => <Dialogs
